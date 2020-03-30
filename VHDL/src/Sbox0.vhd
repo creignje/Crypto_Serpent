@@ -35,7 +35,7 @@ s_sbox(14) <= "1001";	-- 9
 s_sbox(15) <= "1100";	-- 12
 
 
--- 
+-- Reading data
 
 data_out <= s_sbox(TO_INTEGER(UNSIGNED(data_in)));
 
