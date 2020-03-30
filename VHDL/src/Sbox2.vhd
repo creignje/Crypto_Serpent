@@ -17,6 +17,23 @@ BEGIN
 
 -- Sbox initialization
 
+s_sbox(0) <= "1000";    -- 8
+s_sbox(1) <= "0110";	-- 6
+s_sbox(2) <= "0111";	-- 7
+s_sbox(3) <= "1001";	-- 9
+s_sbox(4) <= "0011";	-- 3
+s_sbox(5) <= "1100";	-- 12
+s_sbox(6) <= "1010";	-- 10
+s_sbox(7) <= "1111";	-- 15
+s_sbox(8) <= "1101";	-- 13
+s_sbox(9) <= "0001";	-- 1
+s_sbox(10) <= "1110";	-- 14
+s_sbox(11) <= "0100";	-- 4
+s_sbox(12) <= "0000";	-- 0
+s_sbox(13) <= "1011";	-- 11
+s_sbox(14) <= "0101";	-- 5
+s_sbox(15) <= "0010";	-- 2
+
 -- Reading data
 
 data_out <= s_sbox(TO_INTEGER(UNSIGNED(data_in)));
