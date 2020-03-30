@@ -15,8 +15,6 @@ SIGNAL s_sbox : array_sbox;
 
 BEGIN
 
--- Sbox initialization
-
 s_sbox(0) <= "0011";    -- 3
 s_sbox(1) <= "1000";	-- 8
 s_sbox(2) <= "1111";	-- 15
