@@ -1,7 +1,6 @@
 LIBRARY IEEE;
 
 USE IEEE.STD_LOGIC_1164.ALL;
-USE IEEE.NUMERIC_STD.ALL;
 
 ENTITY Linear_Transformation IS
 PORT(clk: IN STD_LOGIC;
@@ -30,16 +29,16 @@ BEGIN
     
             -- Calculs
             
-            X0 <= ROTATE_LEFT(X0, 13);
-            X2 <= ROTATE_LEFT(X2, 3);
+            X0 <= X0 ROL 13;
+            X2 <= X2 ROL 3;
             X1 <= X1 XOR X0 XOR X2;
-            X3 <= X3 XOR X2 XOR (SHIFT_LEFT(X0, 3));
-            X1 <= ROTATE_LEFT(X1, 1);
-            X3 <= ROTATE_LEFT(X3, 7);
+            X3 <= X3 XOR X2 XOR (X0 SLL 3);
+            X1 <= X1 ROL 1;
+            X3 <= X3 ROL 7;
             X0 <= X0 XOR X1 XOR X3;
-            X2 <= X2 XOR X3 XOR (SHIFT_LEFT(X0, 3));
-            X0 <= ROTATE_LEFT(X0, 5);
-            X2 <= ROTATE_LEFT(X2, 22);
+            X2 <= X2 XOR X3 XOR (X0 SLL 3);
+            X0 <= X0 ROL 5;
+            X2 <= X2 ROL 22;
             
             -- Merge final result into output
     
