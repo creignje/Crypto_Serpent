@@ -1,0 +1,10 @@
+LIBRARY IEEE;
+
+USE IEEE.STD_LOGIC_1164.ALL;
+
+ENTITY Key_Schedule IS
+END ENTITY;
+
+ARCHITECTURE Behavioral OF Key_Schedule IS
+BEGIN
+END Behavioral;
