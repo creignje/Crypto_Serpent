@@ -28,9 +28,18 @@ BEGIN
             X2 <= TO_BITVECTOR(input(63 DOWNTO 32));
             X3 <= TO_BITVECTOR(input(31 DOWNTO 0));
     
-            -- Bitslice Calcul
+            -- Calculs
             
-            
+            X0 <= ROTATE_LEFT(X0, 13);
+            X2 <= ROTATE_LEFT(X2, 3);
+            X1 <= X1 XOR X0 XOR X2;
+            X3 <= X3 XOR X2 XOR (SHIFT_LEFT(X0, 3));
+            X1 <= ROTATE_LEFT(X1, 1);
+            X3 <= ROTATE_LEFT(X3, 7);
+            X0 <= X0 XOR X1 XOR X3;
+            X2 <= X2 XOR X3 XOR (SHIFT_LEFT(X0, 3));
+            X0 <= ROTATE_LEFT(X0, 5);
+            X2 <= ROTATE_LEFT(X2, 22);
             
             -- Merge final result into output
     
